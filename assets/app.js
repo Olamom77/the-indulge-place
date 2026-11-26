@@ -9,7 +9,7 @@ const pool=items.filter(i=>i.menu_type===mt),cs=['All',...new Set(pool.map(i=>i.
 $('#cats').innerHTML=cs.map(c=>`<button class="${c===cat?'on':''}">${esc(c)}</button>`).join('');
 const g=new Map();pool.filter(i=>(cat==='All'||i.category===cat)&&(i.name+' '+(i.description||'')).toLowerCase().includes(q)).forEach(i=>{if(!g.has(i.category))g.set(i.category,[]);g.get(i.category).push(i)});
 let h='';g.forEach((l,c)=>{h+=`<h3 class="ch">${esc(c)}</h3>`+l.map(row).join('')});$('#items').innerHTML=h||'<p>No dishes found.</p>';
-const f=items.filter(i=>+i.featured).slice(0,3);$('#featured').innerHTML=(f.length?f:items.slice(0,3)).map(card).join('');reveal()}
+const f=items.filter(i=>+i.featured).slice(0,3);if(f.length)$('#featured').innerHTML=f.map(card).join('');reveal()}
 function save(){localStorage.setItem('cart',JSON.stringify(cart));drawer()}
 function drawer(){const l=Object.entries(cart).map(([id,q])=>[items.find(i=>i.id==id),q]).filter(x=>x[0]);let t=0;
 $('#lines').innerHTML=l.map(([i,q])=>{t+=i.price*q;return `<div class="ln"><span>${esc(i.name)}<br><small>${money(i.price)}</small></span><span><button data-q="${i.id}:-1">-</button> ${q} <button data-q="${i.id}:1">+</button> <button data-q="${i.id}:x">&times;</button></span></div>`}).join('')||'<p>Your cart is empty.</p>';
