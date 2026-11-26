@@ -7,4 +7,4 @@ function db():PDO{static $p;return $p??=new PDO('mysql:host='.DB_HOST.';dbname='
 function e($s){return htmlspecialchars((string)$s,ENT_QUOTES,'UTF-8');}
 // Editable site details (placeholders - replace with real info)
 $S=['whatsapp'=>'2347075203145','phone'=>'+234 707 520 3145 / +234 802 645 2722','address'=>'Lagos, Nigeria','email'=>'theindulgeplace@gmail.com','currency'=>'₦',
-'instagram'=>'https://www.instagram.com/theindulgeplace/','hours'=>['Monday - Friday'=>'[Opening hours]','Saturday - Sunday'=>'[Opening hours]'],'map'=>''];
+'instagram'=>'https://www.instagram.com/theindulgeplace/','hours'=>['Monday - Sunday'=>'Opens 8:00 AM'],'map'=>''];
