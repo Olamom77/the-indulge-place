@@ -5,7 +5,6 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends libonig-dev pkg-config \
     && docker-php-ext-install pdo_mysql mysqli mbstring \
     && a2enmod rewrite \
-    && apt-get purge -y --auto-remove libonig-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
