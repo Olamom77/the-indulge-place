@@ -1,8 +1,8 @@
 SET NAMES utf8mb4;
-CREATE DATABASE IF NOT EXISTS indulge CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; USE indulge;
-CREATE TABLE menu_items(id INT AUTO_INCREMENT PRIMARY KEY,menu_type VARCHAR(40) NOT NULL DEFAULT 'Main Restaurant',category VARCHAR(60) NOT NULL,name VARCHAR(120) NOT NULL,description TEXT,price DECIMAL(10,2) NOT NULL DEFAULT 0,image VARCHAR(255) DEFAULT '',featured TINYINT(1) DEFAULT 0,available TINYINT(1) DEFAULT 1);
-CREATE TABLE orders(id INT AUTO_INCREMENT PRIMARY KEY,customer VARCHAR(100),phone VARCHAR(30),type ENUM('delivery','pickup'),address VARCHAR(255),notes VARCHAR(500),items_json TEXT,total DECIMAL(10,2),status ENUM('new','preparing','done','cancelled') DEFAULT 'new',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-CREATE TABLE messages(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100),email VARCHAR(150),message TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+-- Import this file into the database selected in Railway MySQL. Do not hard-code a database name here.
+CREATE TABLE IF NOT EXISTS menu_items(id INT AUTO_INCREMENT PRIMARY KEY,menu_type VARCHAR(40) NOT NULL DEFAULT 'Main Restaurant',category VARCHAR(60) NOT NULL,name VARCHAR(120) NOT NULL,description TEXT,price DECIMAL(10,2) NOT NULL DEFAULT 0,image VARCHAR(255) DEFAULT '',featured TINYINT(1) DEFAULT 0,available TINYINT(1) DEFAULT 1);
+CREATE TABLE IF NOT EXISTS orders(id INT AUTO_INCREMENT PRIMARY KEY,customer VARCHAR(100),phone VARCHAR(30),type ENUM('delivery','pickup'),address VARCHAR(255),notes VARCHAR(500),items_json TEXT,total DECIMAL(10,2),status ENUM('new','preparing','done','cancelled') DEFAULT 'new',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS messages(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100),email VARCHAR(150),message TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 -- Menu data from The_Indulge_Place_Main_Restaurant_Menu.pdf and DINE_MENU_DESIGN_2.pdf (prices in Naira)
 INSERT INTO menu_items(menu_type,category,name,description,price,featured) VALUES
 ('Main Restaurant','Rice & Rice Specialties','Jollof Rice','',1000,0),
