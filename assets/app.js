@@ -41,6 +41,8 @@ $('#cf').onsubmit=async e=>{e.preventDefault();const f=e.target,m=$('#cm'),d=Obj
 if(!d.name.trim()||!/^\S+@\S+\.\S+$/.test(d.email)||!d.message.trim())return m.textContent='Please fill in all fields correctly.';
 try{await post('contact',d);f.reset();m.className='msg ok';m.textContent='Thank you - message sent.'}catch(x){m.textContent=x.message}};
 $('#shade').onclick=()=>toggle(false);
+// Render the full local menu immediately so it remains visible even when the PHP API/database is unavailable.
+items=FALLBACK_MENU;mt='';cat='All';render();drawer();
 fetch('api.php?a=menu').then(r=>r.json()).then(d=>{if(!Array.isArray(d)||!d.length)throw Error('Menu database is empty or unavailable');items=d.map(i=>({...i,price:+i.price}));Object.keys(cart).forEach(k=>{if(!items.some(i=>i.id==k))delete cart[k]});localStorage.setItem('cart',JSON.stringify(cart));render();drawer()}).catch(()=>{items=FALLBACK_MENU;mt='';cat='All';render();drawer();const n=document.createElement('p');n.className='menu-note';n.textContent='Showing the menu while the online database is being connected. Online orders will be available once the database is active.';const m=$('#mtabs');if(m&&!document.querySelector('.menu-note'))m.after(n)});
 reveal();document.querySelectorAll('.gal div').forEach(d=>d.onkeydown=e=>e.key==='Enter'&&d.click());
 (()=>{const s=[...document.querySelectorAll('.slide')],d=[...document.querySelectorAll('.dots button')];if(s.length<2)return;let i=0,t;
