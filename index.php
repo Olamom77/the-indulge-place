@@ -1,7 +1,7 @@
 <?php require 'config.php'; ?><!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Indulge Place</title><meta name="description" content="The Indulge Place - restaurant. Explore the menu and order online.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/img/logo.png"><link rel="preload" as="image" href="assets/img/hero-1.jpg"><link rel="stylesheet" href="assets/style.css"></head><body>
+<link rel="icon" href="assets/img/logo.png"><link rel="preload" as="image" href="assets/img/hero-1.jpg"><link rel="stylesheet" href="assets/style.css?v=20261128-image-layout-fix"></head><body>
 <header class="nav" id="nav"><a href="#home" class="logo"><img src="assets/img/logo.png" alt="" width="38" height="38">The Indulge <em>Place</em></a>
 <nav id="links"><a href="#menu">Menu</a><a href="#about">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Visit Us</a><a class="ig" href="<?=e($S['instagram'])?>" target="_blank" rel="noopener">@theindulgeplace</a></nav>
 <button class="btn sm" id="cartBtn">Cart <span id="cc">0</span></button><button id="burger" aria-label="Menu"><i></i><i></i></button></header>
@@ -43,4 +43,4 @@
 <input name="name" placeholder="Full name" required><input name="phone" placeholder="Phone" required><input name="address" placeholder="Delivery address" id="ad" hidden><textarea name="notes" rows="2" placeholder="Notes (optional)"></textarea>
 <button class="btn">Send Order via WhatsApp</button><small>Payment is arranged directly with the restaurant. No online payment is processed here.</small><p class="msg" id="om"></p></form></aside>
 <div id="lb"></div>
-<script>window.SITE=<?=json_encode(['currency'=>$S['currency'],'whatsapp'=>$S['whatsapp']])?>;</script><script src="assets/app.js?v=20261128-featured-image-repair"></script></body></html>
+<script>window.SITE=<?=json_encode(['currency'=>$S['currency'],'whatsapp'=>$S['whatsapp']])?>;</script><script src="assets/app.js?v=20261128-image-layout-fix"></script></body></html>
