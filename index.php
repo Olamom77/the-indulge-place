@@ -43,4 +43,4 @@
 <input name="name" placeholder="Full name" required><input name="phone" placeholder="Phone" required><input name="address" placeholder="Delivery address" id="ad" hidden><textarea name="notes" rows="2" placeholder="Notes (optional)"></textarea>
 <button class="btn">Send Order via WhatsApp</button><small>Payment is arranged directly with the restaurant. No online payment is processed here.</small><p class="msg" id="om"></p></form></aside>
 <div id="lb"></div>
-<script>window.SITE=<?=json_encode(['currency'=>$S['currency'],'whatsapp'=>$S['whatsapp']])?>;</script><script src="assets/app.js?v=20261128-yam-menu-clear"></script></body></html>
+<script>window.SITE=<?=json_encode(['currency'=>$S['currency'],'whatsapp'=>$S['whatsapp']])?>;</script><script src="assets/app.js?v=20261128-yam-menu-map"></script></body></html>
