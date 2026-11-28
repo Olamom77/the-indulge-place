@@ -35,7 +35,7 @@
 <p><b>Address:</b> <?=e($S['address'])?></p><p><b>Phone:</b> <?=e($S['phone'])?></p><p><b>Email:</b> <?=e($S['email'])?></p>
 <?php foreach($S['hours']as $d=>$h)echo '<p><b>'.e($d).':</b> '.e($h).'</p>';?>
 <p><a href="<?=e($S['instagram'])?>" target="_blank" rel="noopener">Instagram</a><?=$S['whatsapp']?' &middot; <a href="https://wa.me/'.e($S['whatsapp']).'" target="_blank" rel="noopener">WhatsApp</a>':''?></p>
-<?=$S['map']?'<iframe class="map" loading="lazy" src="'.e($S['map']).'"></iframe>':''?></div>
+<?=$S['map']?'<iframe class="map" loading="lazy" src="'.e($S['map']).'"></iframe>':'<div class="map">Google Maps embed placeholder - set $S[\'map\'] in config.php</div>'?></div>
 <form id="cf" novalidate><h3>Send a message</h3><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Email" required><textarea name="message" rows="4" placeholder="Message" required></textarea><button class="btn">Send</button><p class="msg" id="cm"></p></form></section>
 <footer><p>&copy; <?=date('Y')?> The Indulge Place &middot; By Bkcooks Deli</p><a href="<?=e($S['instagram'])?>" target="_blank" rel="noopener">Instagram</a><small>Food photos: Iwuala Lucy and Halima Waziri, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</small></footer>
 <div id="shade"></div><aside id="drawer"><button id="close" aria-label="Close">&times;</button><h3>Your Order</h3><div id="lines"></div><p class="tot">Total: <b id="tot"></b></p>
