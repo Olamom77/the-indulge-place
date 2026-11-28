@@ -2,7 +2,7 @@
 $a=$_GET['a']??''; $in=json_decode(file_get_contents('php://input'),true)??[];
 function out($d,$c=200){http_response_code($c);echo json_encode($d);exit;}
 try{
-if($a==='menu')out(db()->query("SELECT id,menu_type,category,name,description,price,CASE WHEN name='Indulge Supreme Yam Bowl' THEN 'assets/img/indulge-supreme-yam-bowl-approved.jpg' WHEN (image IS NULL OR image='') AND name='Loaded Yam Platter' THEN 'assets/img/loaded-yam-platter.jpg' WHEN (image IS NULL OR image='') AND name='Yam & Sauce Trio' THEN 'assets/img/indulge-supreme-yam.jpg' ELSE image END AS image,featured FROM menu_items WHERE available=1 ORDER BY id")->fetchAll());
+if($a==='menu')out(db()->query("SELECT id,menu_type,category,name,description,price,CASE WHEN name='Indulge Supreme Yam Bowl' THEN 'assets/img/indulge-supreme-yam-bowl.webp' WHEN (image IS NULL OR image='') AND name='Loaded Yam Platter' THEN 'assets/img/loaded-yam-platter.jpg' WHEN (image IS NULL OR image='') AND name='Yam & Sauce Trio' THEN 'assets/img/indulge-supreme-yam.jpg' ELSE image END AS image,featured FROM menu_items WHERE available=1 ORDER BY id")->fetchAll());
 if($_SERVER['REQUEST_METHOD']!=='POST')out(['error'=>'Bad request'],405);
 if($a==='order'){
  $n=trim($in['name']??'');$ph=trim($in['phone']??'');$t=$in['type']??'';$ad=trim($in['address']??'');$no=trim($in['notes']??'');
