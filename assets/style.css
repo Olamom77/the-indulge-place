@@ -27,7 +27,7 @@ h2{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1}.head{text-align:center;ma
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:40px 24px}.grid.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
 /* cards */
 .card h3{font-size:1.3rem;margin:16px 0 4px}.card p{margin:0;color:var(--mut);font-size:.93rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.ph{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#d9b98a}.pic{position:absolute;inset:0;--g:linear-gradient(145deg,#e0b982,#8f4f25);background:var(--g) center/cover;transition:transform .9s var(--ease)}
+.ph{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#d9b98a}.pic{display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;--g:linear-gradient(145deg,#e0b982,#8f4f25);background:var(--g) center/cover;transition:transform .9s var(--ease)}
 .card:nth-child(3n+2) .pic{--g:linear-gradient(145deg,#c98a5a,#5a2a17)}.card:nth-child(3n) .pic{--g:linear-gradient(145deg,#a8563a,#2e140d)}.card:hover .pic{transform:scale(1.08)}
 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(20,12,9,.55));pointer-events:none}
 .pr{position:absolute;top:14px;left:14px;z-index:2;background:rgba(20,12,9,.55);backdrop-filter:blur(8px);color:#fff;padding:5px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
