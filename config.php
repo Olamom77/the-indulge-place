@@ -33,5 +33,5 @@ $S = [
     'currency' => '₦',
     'instagram' => 'https://www.instagram.com/theindulgeplace/',
     'hours' => ['Monday - Sunday' => 'Opens 8:00 AM'],
-    'map' => 'https://maps.google.com/maps?q=The%20Indulge%20Place%2C%20Lagos%2C%20Nigeria&z=14&output=embed'
+    'map' => ''
 ];
